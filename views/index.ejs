@@ -5,25 +5,22 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <section>
-      <h2> Messages </h2>
-      <section>
-        <% messages.forEach(message => { %>
-          <div>
-            <h3><%= message.user %></h3>
-            <p><%= message.text %></p>
-            <p>
-              <%= `
-                ${message.added.toLocaleTimeString().slice(0, 5)} - ${message.added.toDateString()}`%>
-            </p>
-          </div>
-        <% }) %>
+    <div class="container">
+      <h1><%= title %></h1>
+      <section class="section-messages">
+        <h2> Messages </h2>
+          <% messages.forEach(message => { %>
+            <div class="message">
+              <h3><%= message.user %></h3>
+              <p><%= message.text %></p>
+              <p class="timestamp">
+                <%= `
+                  ${message.added.toLocaleTimeString().slice(0, 5)} - ${message.added.toDateString()}`%>
+              </p>
+            </div>
+          <% }) %>
       </section>
       <%- include("form.ejs") %>
-    </section>
-    <ul>
-    </ul>
+    </div>
   </body>
 </html>
