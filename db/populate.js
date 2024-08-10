@@ -34,13 +34,18 @@ const SQL = `
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE}`,
+    connectionString: process.env.DATABASE_URL,
   });
 
-  await client.connect();
-  await client.query(SQL);
-  await client.end();
-  console.log("Done");
+  try {
+    await client.connect();
+    await client.query(SQL);
+    await client.end();
+
+    console.log("Done");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 main();
