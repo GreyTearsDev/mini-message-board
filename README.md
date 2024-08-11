@@ -5,6 +5,6 @@ This is a small webapp built using Node.js, Express.js, and PostgreSQL
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=css,html,javascript,nodejs,express,posgresql&perline=3" />
+    <img src="https://skillicons.dev/icons?i=css,html,javascript,nodejs,express,postgres&perline=3" />
   </a>
 </p>
